@@ -50,7 +50,7 @@ master_salt(NULL), master_salt_length(0),
 n_e(0),k_e(NULL),n_a(0),k_a(NULL),n_s(0),k_s(NULL),
 ealg(SrtpEncryptionNull), aalg(SrtpAuthenticationNull),
 ekeyl(0), akeyl(0), skeyl(0),
-cipher(NULL), f8Cipher(NULL)
+macCtx(NULL), cipher(NULL), f8Cipher(NULL)
 {}
 
 #ifdef SRTP_SUPPORT
