@@ -466,7 +466,7 @@ static uint32 MD5BasedRandom32()
         uint8 buf8[16];
     } digest;
 
-    gettimeofday(&(message.data.time),NULL);
+    SysTime::gettimeofday(&(message.data.time),NULL);
     message.array[0] =
         static_cast<uint8>(message.data.time.tv_sec *
                    message.data.time.tv_usec);
@@ -527,7 +527,7 @@ RTPQueueBase::RTPQueueBase(uint32 *ssrc)
     // assume a default rate and payload type.
     setPayloadFormat(StaticPayloadFormat(sptPCMU));
     // queue/session creation time
-    gettimeofday(&initialTime,NULL);
+    SysTime::gettimeofday(&initialTime,NULL);
 }
 
 const uint32 RTPDataQueue::defaultSessionBw = 64000;
@@ -576,7 +576,7 @@ RTPDataQueue::getCurrentTimestamp() const
 {
     // translate from current time to timestamp
     timeval now;
-    gettimeofday(&now,NULL);
+    SysTime::gettimeofday(&now,NULL);
 
     int32 result = now.tv_usec - getInitialTime().tv_usec;
     result *= (getCurrentRTPClockRate()/1000);

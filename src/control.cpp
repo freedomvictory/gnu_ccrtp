@@ -83,7 +83,7 @@ queueApplication(app), srtcpIndex(0)
         sizeof(SenderInfo);
     rtcpInitial = true;
     // force an initial check for incoming RTCP packets
-    gettimeofday(&rtcpNextCheck,NULL);
+    SysTime::gettimeofday(&rtcpNextCheck,NULL);
     // check for incoming RTCP packets every 1/4 seconds.
     rtcpCheckInterval.tv_sec = 0;
     rtcpCheckInterval.tv_usec = 250000;
@@ -135,7 +135,7 @@ queueApplication(app), srtcpIndex(0)
     rtcpAvgSize = sizeof(RTCPFixedHeader) + sizeof(uint32) + sizeof(SenderInfo);
     rtcpInitial = true;
     // force an initial check for incoming RTCP packets
-    gettimeofday(&rtcpNextCheck,NULL);
+    SysTime::gettimeofday(&rtcpNextCheck,NULL);
     // check for incoming RTCP packets every 1/4 seconds.
     rtcpCheckInterval.tv_sec = 0;
     rtcpCheckInterval.tv_usec = 250000;
@@ -244,7 +244,7 @@ void QueueRTCPManager::controlReceptionService()
         return;
 
     // A) see if there are incoming RTCP packets
-    gettimeofday(&(reconsInfo.rtcpTc),NULL);
+    SysTime::gettimeofday(&(reconsInfo.rtcpTc),NULL);
     if ( timercmp(&(reconsInfo.rtcpTc),&rtcpNextCheck,>=) ) {
         while ( isPendingControl(0) )
             takeInControlPacket();
@@ -266,7 +266,7 @@ void QueueRTCPManager::controlTransmissionService()
         return;
 
     // B) send RTCP packets
-    gettimeofday(&(reconsInfo.rtcpTc),NULL);
+    SysTime::gettimeofday(&(reconsInfo.rtcpTc),NULL);
     if ( timercmp(&(reconsInfo.rtcpTc),&(reconsInfo.rtcpTn),>=) ) {
         if ( timerReconsideration() ) {
             // this would update to last received RTCP packets
@@ -297,7 +297,7 @@ bool QueueRTCPManager::timerReconsideration()
     // circumstances
     timeval T = computeRTCPInterval();
     timeradd(&(reconsInfo.rtcpTp),&T,&(reconsInfo.rtcpTn));
-    gettimeofday(&(reconsInfo.rtcpTc),NULL);
+    SysTime::gettimeofday(&(reconsInfo.rtcpTc),NULL);
     if ( timercmp(&(reconsInfo.rtcpTc),&(reconsInfo.rtcpTn),>=) ) {
         reconsInfo.rtcpTp = reconsInfo.rtcpTc;
         result = true;
@@ -319,12 +319,12 @@ QueueRTCPManager::takeInControlPacket()
 
     // get time of arrival
     struct timeval recvtime;
-    gettimeofday(&recvtime,NULL);
+    SysTime::gettimeofday(&recvtime,NULL);
 
     // process a 'len' octets long RTCP compound packet
 
     RTCPPacket *pkt = reinterpret_cast<RTCPPacket *>(rtcpRecvBuffer);
-    
+
     CryptoContextCtrl* pcc = getInQueueCryptoContextCtrl(pkt->getSSRC());
     if (pcc == NULL) {
         pcc = getInQueueCryptoContextCtrl(0);
@@ -488,7 +488,7 @@ bool QueueRTCPManager::end2EndDelayed(IncomingRTPPktLink& pl)
             timeval packetTime;
             timeradd(&tNTP,&timevalInc,&packetTime);
             timeval now, diff;
-            gettimeofday(&now,NULL);
+            SysTime::gettimeofday(&now,NULL);
             timersub(&now,&packetTime,&diff);
 
             if ( timeval2microtimeout(diff) > getEnd2EndDelay() )
@@ -752,7 +752,7 @@ size_t QueueRTCPManager::dispatchBYE(const std::string& reason)
     if ( getMembersCount() > 50) {
         // Usurp the scheduler role and apply a back-off
         // algorithm to avoid BYE floods.
-        gettimeofday(&(reconsInfo.rtcpTc),NULL);
+        SysTime::gettimeofday(&(reconsInfo.rtcpTc),NULL);
         reconsInfo.rtcpTp = reconsInfo.rtcpTc;
         setMembersCount(1);
         setPrevMembersNum(1);
@@ -761,14 +761,14 @@ size_t QueueRTCPManager::dispatchBYE(const std::string& reason)
         rtcpAvgSize = (uint16)(sizeof(RTCPFixedHeader) + sizeof(uint32) +
             strlen(reason.c_str()) +
             (4 - (strlen(reason.c_str()) & 0x03)));
-        gettimeofday(&(reconsInfo.rtcpTc),NULL);
+        SysTime::gettimeofday(&(reconsInfo.rtcpTc),NULL);
         timeval T = computeRTCPInterval();
         timeradd(&(reconsInfo.rtcpTp),&T,&(reconsInfo.rtcpTn));
         while ( timercmp(&(reconsInfo.rtcpTc),&(reconsInfo.rtcpTn),<) ) {
             getOnlyBye();
             if ( timerReconsideration() )
                 break;
-            gettimeofday(&(reconsInfo.rtcpTc),NULL);
+            SysTime::gettimeofday(&(reconsInfo.rtcpTc),NULL);
         }
     }
 
@@ -884,7 +884,7 @@ size_t QueueRTCPManager::dispatchControlPacket(void)
         // Fill in sender info block. It would be more
         // accurate if this were done as late as possible.
         timeval now;
-        gettimeofday(&now,NULL);
+        SysTime::gettimeofday(&now,NULL);
         // NTP MSB and MSB: dependent on current payload type.
         pkt->info.SR.sinfo.NTPMSW = htonl(now.tv_sec + NTP_EPOCH_OFFSET);
         pkt->info.SR.sinfo.NTPLSW = htonl((uint32)(((double)(now.tv_usec)*(uint32)(~0))/1000000.0));
@@ -1060,7 +1060,7 @@ uint8 QueueRTCPManager::packReportBlocks(RRBlock* blocks, uint16 &len, uint16& a
                        ((ntohl(si->NTPLSW) & 0xFFFF0000) >> 16)
                        );
             timeval now, diff;
-            gettimeofday(&now,NULL);
+            SysTime::gettimeofday(&now,NULL);
             timeval last = srcLink.getLastRTCPSRTime();
             timersub(&now,&last,&diff);
             blocks[j].rinfo.dlsr =
@@ -1124,7 +1124,7 @@ size_t QueueRTCPManager::sendControlToDestinations(unsigned char* buffer, size_t
 {
     size_t count = 0;
     lockDestinationList();
-    
+
     // Cast to have easy access to ssrc et al
     RTCPPacket *pkt = reinterpret_cast<RTCPPacket *>(buffer);
 
@@ -1175,7 +1175,7 @@ QueueRTCPManager::protect(uint8* pkt, size_t len, CryptoContextCtrl* pcc) {
     uint32 encIndex = srtcpIndex | 0x80000000;  // set the E flag
 
     uint32* ip = reinterpret_cast<uint32*>(pkt+len);
-    *ip = htonl(encIndex);   
+    *ip = htonl(encIndex);
 
     // NO MKI support yet - here we assume MKI is zero. To build in MKI
     // take MKI length into account when storing the authentication tag.

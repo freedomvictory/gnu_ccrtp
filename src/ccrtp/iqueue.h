@@ -272,7 +272,7 @@ public:
                                tpport_t ctp);
 
     void updateConflict(ConflictingTransportAddress& ca)
-    { gettimeofday(&(ca.lastPacketTime),NULL); }
+    { SysTime::gettimeofday(&(ca.lastPacketTime),NULL); }
 
     void addConflict(const InetAddress& na, tpport_t dtp, tpport_t ctp);
 

@@ -47,7 +47,7 @@ ConflictingTransportAddress(InetAddress na,tpport_t dtp, tpport_t ctp):
 networkAddress(na), dataTransportPort(dtp),
 controlTransportPort(ctp), next(NULL)
 {
-    gettimeofday(&lastPacketTime,NULL);
+    SysTime::gettimeofday(&lastPacketTime,NULL);
 }
 
 ConflictHandler::ConflictingTransportAddress*
@@ -193,7 +193,7 @@ IncomingDataQueue::takeInDataPacket(void)
 
     // get time of arrival
     struct timeval recvtime;
-    gettimeofday(&recvtime,NULL);
+    SysTime::gettimeofday(&recvtime,NULL);
 
     // Special handling of padding to take care of encrypted content.
     // In case of SRTP the padding length field is also encrypted, thus

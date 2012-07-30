@@ -328,7 +328,7 @@ OutgoingDataQueue::getSchedulingTimeout(void)
         // plus the time accumulated through successive
         // overflows of timestamp. See below.
         timeradd(&send,&(sendInfo.overflowTime),&send);
-        gettimeofday(&now, NULL);
+        SysTime::gettimeofday(&now, NULL);
 
         // Problem: when timestamp overflows, time goes back.
         // We MUST ensure that _send_ is not too lower than
