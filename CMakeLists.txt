@@ -89,7 +89,7 @@ endif()
 if (enable_srtp)
   # now get info about crypto libraries
   gcr_check(GCRYPT gcrypt)
-  if (GCRYPT_FOUND NOT OPENSSL_FOUND)
+  if (GCRYPT_FOUND AND NOT OPENSSL_FOUND)
     set(SRTP_SUPPORT TRUE)
     check_include_files(gcrypt.h HAVE_GCRYPT_H)
     set(LIBS ${LIBS} ${GCRYPT_LIBRARIES})
