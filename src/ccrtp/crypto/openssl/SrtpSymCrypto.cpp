@@ -43,7 +43,12 @@
 #include <crypto/twofish.h>
 #include <string.h>
 #include <stdio.h>
+
+#if defined(_MSC_VER) || defined(WIN32) || defined(_WIN32)
+#include <windows.h>
+#else
 #include <arpa/inet.h>
+#endif
 
 SrtpSymCrypto::SrtpSymCrypto(int algo):key(NULL), algorithm(algo) {
 }
@@ -104,7 +109,7 @@ void SrtpSymCrypto::encrypt(const uint8_t* input, uint8_t* output ) {
     }
     else if (algorithm == SrtpEncryptionTWOCM || algorithm == SrtpEncryptionTWOF8) {
         Twofish_encrypt((Twofish_key*)key, (Twofish_Byte*)input,
-                        (Twofish_Byte*)output); 
+                        (Twofish_Byte*)output);
     }
 }
 

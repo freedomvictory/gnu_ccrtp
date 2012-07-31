@@ -37,7 +37,7 @@
 /**
  * @file SrtpSymCrypto.h
  * @brief Class which implements SRTP AES cryptographic functions
- * 
+ *
  * @ingroup GNU_ZRTP
  * @{
  */
@@ -80,7 +80,7 @@ public:
 
     /**
      * Constructor that initializes key data
-     * 
+     *
      * @param key
      *     Pointer to key bytes.
      * @param key_length
@@ -108,7 +108,7 @@ public:
      * Set new key
      *
      * @param key
-     *   Pointer to key data, must have at least a size of keyLength 
+     *   Pointer to key data, must have at least a size of keyLength
      *
      * @param keyLength
      *   Length of the key in bytes, must be 16, 24, or 32
@@ -258,7 +258,12 @@ int testF8();
 #include <cstring>
 #include <iostream>
 #include <cstdio>
+
+#if defined(_MSC_VER) || defined(WIN32) || defined(_WIN32)
+#include <windows.h>
+#else
 #include <arpa/inet.h>
+#endif
 
 using namespace std;
 
