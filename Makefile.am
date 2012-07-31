@@ -12,7 +12,8 @@
 AUTOMAKE_OPTIONS = no-dependencies dist-shar dist-zip
 ACLOCAL_AMFLAGS = -I m4
 EXTRA_DIST = autogen.sh ccrtp.spec ccrtp.spec.in COPYING.addendum \
-    ccrtp.list ccrtp.list.in libccrtp.pc libccrtp.pc.in autoconf/*
+    ccrtp.list ccrtp.list.in libccrtp.pc libccrtp.pc.in autoconf/* \
+    ccrtp-config.h
 
 SUBDIRS = src demo doc
 DIST_SUBDIRS = m4 src phone doc demo w32

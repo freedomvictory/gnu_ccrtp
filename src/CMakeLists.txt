@@ -11,8 +11,6 @@
 ## implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
-
 ########### next target ###############
 
 set(openssl_srcs ccrtp/crypto/openssl/hmac.cpp

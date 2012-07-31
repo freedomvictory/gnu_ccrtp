@@ -93,9 +93,7 @@
 #include <commoncpp/process.h>
 #include <commoncpp/export.h>
 
-#ifndef CCRTP_CAPE
-#include "config.h"
-#endif
+#include <ccrtp-config.h>
 
 #undef  PACKAGE
 #undef  VERSION

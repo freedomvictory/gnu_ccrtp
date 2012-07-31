@@ -131,6 +131,9 @@ endif()
 # now prepare and go for the sub-directories
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/src/ccrtp)
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ccrtp-config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/ccrtp-config.h)
+include_directories("${CMAKE_CURRENT_BINARY_DIR}")
+
 add_subdirectory(src)
 
 add_subdirectory(demo)

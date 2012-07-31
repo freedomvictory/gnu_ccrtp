@@ -27,7 +27,7 @@
 
 #include <iostream>
 
-#include <config.h>
+#include <ccrtp-config.h>
 
 #ifdef SRTP_SUPPORT
 #include <ccrtp/crypto/hmac.h>
