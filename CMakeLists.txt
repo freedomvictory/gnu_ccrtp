@@ -24,7 +24,8 @@ SET(CPACK_PACKAGE_VERSION_PATCH 3)
 
 # set some global variables, in particular version variables
 set (VERSION 2.0.3)
-set (SOVERSION 2)
+set (SOVERSION ${VERSION})
+STRING(REGEX REPLACE "[.].*$" "" SOVERSION ${SOVERSION})
 set (REQUIRES 5.0.0)
 set (PACKAGE ccrtp)
 
