@@ -32,7 +32,7 @@ if test ! -z "$cfg_options" ; then
         exit -1
 fi
 
-VERSION="2.0.4"
+VERSION="2.0.5"
 REQUIRES="5.0.0"
 LT_VERSION="2:2:0"
 AC_CONFIG_AUX_DIR(autoconf)
@@ -148,4 +148,4 @@ AM_CONDITIONAL(DOXY, test "$DOXYGEN" != "no")
 
 AC_OUTPUT(Makefile m4/Makefile src/Makefile src/ccrtp/Makefile
 doc/Makefile demo/Makefile phone/Makefile w32/Makefile ccrtp.spec
-libccrtp.spec ccrtp.list libccrtp.pc src/ccrtp/crypto/Makefile)
+libccrtp.spec ccrtp.list libccrtp.pc src/ccrtp/crypto/Makefile directive)
