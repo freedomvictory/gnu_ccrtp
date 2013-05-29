@@ -773,7 +773,7 @@ size_t QueueRTCPManager::dispatchBYE(const std::string& reason)
     }
 
 
-    unsigned char buffer[BYE_BUFFER_LENGTH];
+    unsigned char buffer[BYE_BUFFER_LENGTH] = {0};
     // Build an empty RR as first packet in the compound.
         // TODO: provide more information if available. Not really
     // important, since this is the last packet being sent.
