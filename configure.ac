@@ -9,7 +9,8 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-AC_INIT(src/ccrtp/rtp.h)
+AC_INIT([ccrtp], [2.0.3])
+AC_CONFIG_SRCDIR([src/ccrtp/rtp.h])
 
 cfg_options=""
 if test -z "$*" ; then
@@ -42,7 +43,7 @@ AC_PROG_CXXCPP
 AC_PROG_CXX
 # OST_PROG_CC_POSIX
 AM_PROG_LIBTOOL
-AM_INIT_AUTOMAKE(ccrtp,[$VERSION])
+AM_INIT_AUTOMAKE([no-dependencies dist-shar dist-zip])
 AM_CONFIG_HEADER(ccrtp-config.h)
 
 AC_C_RESTRICT
