@@ -1,4 +1,8 @@
-2013-06-03  Tristan Matth
+2013-06-08  Jan Engelhardt
+
+	Modernized automake
+
+2013-06-03  Tristan Matthew
 
 	Uninitialized control message and rtcp messages.
 
