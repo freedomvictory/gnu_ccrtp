@@ -187,7 +187,7 @@ IncomingDataQueue::takeInDataPacket(void)
     unsigned char* buffer = new unsigned char[nextSize];
     int32 rtn = (int32)recvData(buffer,nextSize,network_address,transport_port);
     if ( (rtn < 0) || ((uint32)rtn > getMaxRecvPacketSize()) ){
-        delete buffer;
+        delete [] buffer;
         return 0;
     }
 
