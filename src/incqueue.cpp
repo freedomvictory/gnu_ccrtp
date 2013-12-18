@@ -600,7 +600,8 @@ IncomingDataQueue::getWaiting(uint32 timestamp, const SyncSource* src)
             result = NULL;
         } else if ( recvFirst->getTimestamp() > timestamp ) {
             // there are only newer packets in the queue
-            l->setPrev(NULL);
+            if (l)
+                l->setPrev(NULL);
             result = NULL;
         } else {
             // (recvFirst->getTimestamp() == stamp) is true
