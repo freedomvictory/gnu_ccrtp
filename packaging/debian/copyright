@@ -1,0 +1,130 @@
+This package was debianized by Mark Purcell <msp@debian.org> on
+Sun, 11 Nov 2001 21:41:16 +1100.
+
+It was downloaded from http://www.gnu.org/software/ccrtp/
+
+Upstream Authors: David Sugar <dyfet@ostel.com>
+		  Frederico Montesino Pouzols <p5087@quintero.fie.us.es>
+
+Copyright:
+
+# Copyright (C) 1999-2004 Open Source Telecom Corporation.
+Portions Copyright (C) 2001,2002  Federico Montesino <fedemp@altern.org>
+
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 dated June, 1991.
+
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+demo/Makefile.in:# Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
+demo/Makefile.in:# Copyright (C) 1999-2004 Open Source Telecom Corporation.
+demo/audiotx.cpp:// Copyright (C) 2001,2002  Federico Montesino <fedemp@altern.org>
+demo/ccrtptest.cpp:// Copyright (C) 2004 Federico Montesino Pouzols <fedemp@altern.org>
+demo/rtpduphello.cpp:// Copyright (C) 2001,2002  Federico Montesino <fedemp@altern.org>
+demo/rtphello.cpp:// Copyright (C) 2001,2002  Federico Montesino <fedemp@altern.org>
+demo/rtplisten.cpp:// Copyright (C) 2001,2002,2003,2004 Federico Montesino <fedemp@altern.org>
+demo/rtpsend.cpp:// Copyright (C) 2001,2002  Federico Montesino <fedemp@altern.org>
+doc/Makefile.am:# Copyright (C) 2000-2002 Open Source Telecom Corporation.
+doc/Makefile.in:# Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
+doc/Makefile.in:# Copyright (C) 2000-2002 Open Source Telecom Corporation.
+doc/ccrtp.info:   Copyright (C) 2001, 2002, 2003, 2004 Federico Montesino Pouzols
+doc/ccrtp.info:     Copyright (C) 1989, 1991 Free Software Foundation, Inc.
+doc/ccrtp.info:   We protect your rights with two steps: (1) copyright the software,
+doc/ccrtp.info:     notice placed by the copyright holder saying it may be distributed
+doc/ccrtp.info:     copyright law: that is to say, a work containing the Program or a
+doc/ccrtp.info:     copyright notice and disclaimer of warranty; keep intact all the
+doc/ccrtp.info:          an announcement including an appropriate copyright notice and
+doc/ccrtp.info:     certain countries either by patents or by copyrighted interfaces,
+doc/ccrtp.info:     the original copyright holder who places the Program under this
+doc/ccrtp.info:     author to ask for permission.  For software which is copyrighted
+doc/ccrtp.info:the "copyright" line and a pointer to where the full notice is found.
+doc/ccrtp.info:     Copyright (C) YYYY  NAME OF AUTHOR
+doc/ccrtp.info:     Gnomovision version 69, Copyright (C) 19YY NAME OF AUTHOR
+doc/ccrtp.info:your school, if any, to sign a "copyright disclaimer" for the program,
+doc/ccrtp.info:     Yoyodyne, Inc., hereby disclaims all copyright interest in the program
+doc/ccrtp.info:     Copyright (C) 2000,2001,2002 Free Software Foundation, Inc.
+doc/ccrtp.info:     that contains a notice placed by the copyright holder saying it
+doc/ccrtp.info:     way requiring permission under copyright law.
+doc/ccrtp.info:     copyright notices, and the license notice saying this License
+doc/ccrtp.info:       D. Preserve all the copyright notices of the Document.
+doc/ccrtp.info:       E. Add an appropriate copyright notice for your modifications
+doc/ccrtp.info:          adjacent to the other copyright notices.
+doc/ccrtp.info:       F. Include, immediately after the copyright notices, a license
+doc/ccrtp.info:     copyright resulting from the compilation is not used to limit the
+doc/ccrtp.info:     permission from their copyright holders, but you may include
+doc/ccrtp.info:the License in the document and put the following copyright and license
+doc/ccrtp.info:       Copyright (C)  YEAR  YOUR NAME.
+doc/ccrtp.texi:@c %** start of summary description and copyright
+doc/ccrtp.texi:Copyright @copyright{} 2001, 2002, 2003, 2004 Federico Montesino Pouzols
+doc/ccrtp.texi:@c %** end of summary description and copyright
+doc/ccrtp.texi:@c %** start of title and copyright page
+doc/ccrtp.texi:@center{Copyright @copyright{} 2001, 2002, 2003, 2004, 2005 Federico Montesino Pouzols}
+doc/ccrtp.texi:@c %** end of title and copyright page
+doc/fdl.texi:Copyright @copyright{} 2000,2001,2002 Free Software Foundation, Inc.
+doc/fdl.texi:contains a notice placed by the copyright holder saying it can be
+doc/fdl.texi:under copyright law.
+doc/fdl.texi:copyright notices, and the license notice saying this License applies
+doc/fdl.texi:Preserve all the copyright notices of the Document.
+doc/fdl.texi:Add an appropriate copyright notice for your modifications
+doc/fdl.texi:adjacent to the other copyright notices.
+doc/fdl.texi:Include, immediately after the copyright notices, a license notice
+doc/fdl.texi:distribution medium, is called an ``aggregate'' if the copyright
+doc/fdl.texi:permission from their copyright holders, but you may include
+doc/fdl.texi:the License in the document and put the following copyright and
+doc/fdl.texi:  Copyright (C)  @var{year}  @var{your name}.
+doc/gpl.texi:Copyright @copyright{} 1989, 1991 Free Software Foundation, Inc.
+doc/gpl.texi:  We protect your rights with two steps: (1) copyright the software, and
+doc/gpl.texi:a notice placed by the copyright holder saying it may be distributed
+doc/gpl.texi:means either the Program or any derivative work under copyright law:
+doc/gpl.texi:copyright notice and disclaimer of warranty; keep intact all the
+doc/gpl.texi:announcement including an appropriate copyright notice and a
+doc/gpl.texi:certain countries either by patents or by copyrighted interfaces, the
+doc/gpl.texi:original copyright holder who places the Program under this License
+doc/gpl.texi:to ask for permission.  For software which is copyrighted by the Free
+doc/gpl.texi:the ``copyright'' line and a pointer to where the full notice is found.
+doc/gpl.texi:Copyright (C) @var{yyyy}  @var{name of author}
+doc/gpl.texi:Gnomovision version 69, Copyright (C) 19@var{yy} @var{name of author}
+doc/gpl.texi:school, if any, to sign a ``copyright disclaimer'' for the program, if
+doc/gpl.texi:Yoyodyne, Inc., hereby disclaims all copyright interest in the program
+m4/Makefile.am:# Copyright (C) 1999-2001 Open Source Telecom Corporation.
+m4/Makefile.in:# Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
+m4/Makefile.in:# Copyright (C) 1999-2001 Open Source Telecom Corporation.
+m4/ost_debug.m4:dnl Copyright (C) 1999-2001 Open Source Telecom Corporation.
+m4/ost_maint.m4:dnl Copyright (C) 1999-2001 Open Source Telecom Corporation.
+m4/ost_prog.m4:dnl Copyright (C) 1999-2001 Open Source Telecom Corporation.
+phone/Makefile.am:# Copyright (C) 1999-2002 Open Source Telecom Corporation.
+phone/Makefile.in:# Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
+phone/Makefile.in:# Copyright (C) 1999-2002 Open Source Telecom Corporation.
+phone/config.cpp:// Copyright (C) 2000-2001 Open Source Telecom Corporation.
+phone/phone.conf:# Copyright (C) 2000-2001 Open Source Telecom Corporation.
+phone/phone.cpp:// Copyright (C) 2000-2001 Open Source Telecom Corporation.
+phone/phone.h:// Copyright (C) 2000-2002 Open Source Telecom Corporation.
+phone/rtp.cpp:// Copyright (C) 2000-2002 Open Source Telecom Corporation.
+phone/server.cpp:// Copyright (C) 2000-2002 Open Source Telecom Corporation.
+phone/server.h:// Copyright (C) 2000-2002 Open Source Telecom Corporation.
+src/Makefile.am:# Copyright (C) 1999-2002 Open Source Telecom Corporation.
+src/Makefile.in:# Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
+src/Makefile.in:# Copyright (C) 1999-2002 Open Source Telecom Corporation.
+src/control.cpp:// Copyright (C) 1999-2005 Open Source Telecom Corporation.
+src/duplex.cpp:// Copyright (C) 1999-2002 Open Source Telecom Corporation.
+src/data.cpp:// Copyright (C) 2001,2002 Federico Montesino <p5087@quintero.fie.us.es>
+src/queue.cpp:// Copyright (C) 1999-2002 Open Source Telecom Corporation.
+src/rtcppkt.cpp:// Copyright (C) 2001,2002 Federico Montesino Pouzols <fedemp@altern.org>.
+src/rtppkt.cpp:// Copyright (C) 1999-2005 Open Source Telecom Corporation.
+src/socket.cpp:// Copyright (C) 1999-2002 Open Source Telecom Corporation.
+src/source.cpp:// Copyright (C) 2001,2002,2003,2004 Federico Montesino <fedemp@altern.org>
+w32/Makefile.am:# Copyright (C) 2002 Federico Montesino Pouzols <fedemp@suidzer0.org>
+w32/Makefile.in:# Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
+w32/Makefile.in:# Copyright (C) 2002 Federico Montesino Pouzols <fedemp@suidzer0.org>

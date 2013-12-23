@@ -1,0 +1,50 @@
+ccrtp (2.0.6-0gt1) UNRELEASED; urgency=high
+
+  * Fixed initialization issues rtcp
+
+ -- David Sugar <dyfet@gnutelephony.org>  Mon, 03 Jun 2013 08:17:20 -0400
+
+ccrtp (2.0.5-0gt1) UNRELEASED; urgency=low
+
+  * Updated for mass rebuild with ucommon 6 api
+  * Internal directive support
+
+ -- David Sugar <dyfet@gnutelephony.org>  Tue, 20 Nov 2012 08:47:50 -0400
+
+ccrtp (2.0.4-0gt1) UNRELEASED; urgency=low
+
+  * OpenSSL initialization related fixes
+
+ -- David Sugar <dyfet@gnutelephony.org>  Fri, 28 Sep 2012 21:04:53 -0400
+
+ccrtp (2.0.3-1) UNRELEASED; urgency=low
+
+  * Improved key handling
+  * Added f8 mode
+
+ -- David Sugar <dyfet@gnutelephony.org>  Wed, 21 Mar 2012 10:19:03 -0400
+
+ccrtp (2.0.2-1) UNRELEASED; urgency=low
+
+  * srtp support for rtcp (srtcp).
+
+ -- David Sugar <dyfet@gnutelephony.org>  Sun, 13 Nov 2011 17:49:55 -0500
+
+ccrtp (2.0.0-1) UNRELEASED; urgency=low
+
+  * Revised for ucommon 5 as base dependency
+  * Updated for debhelper 7
+
+ -- David Sugar <dyfet@gnutelephony.org>  Sat, 28 May 2011 18:23:51 -0400
+
+ccrtp (1.8.0-1) UNRELEASED; urgency=low
+
+  * Revised for SRTP padding issues.
+
+ -- David Sugar <dyfet@gnutelephony.org>  Thu, 13 Jan 2011 20:56:17 -0500
+
+ccrtp (1.7.2) UNRELEASED; urgency=low
+
+  * Fixes for SRTP packing of padding for ZRTP.
+
+ -- David Sugar <dyfet@gnutelephony.org>  Sun, 05 Dec 2010 13:05:24 -0500
