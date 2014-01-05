@@ -14,6 +14,11 @@
 cmake_minimum_required(VERSION 2.6)
 
 PROJECT(libccrtp)
+set (VERSION 2.0.7)
+set (SOVERSION ${VERSION})
+STRING(REGEX REPLACE "[.].*$" "" SOVERSION ${SOVERSION})
+set (REQUIRES 5.0.0)
+set (PACKAGE ccrtp)
 
 # for debug and trace during CMakeList development
 set(CMAKE_VERBOSE_MAKEFILE FALSE)
@@ -23,11 +28,6 @@ SET(CPACK_PACKAGE_VERSION_MINOR 0)
 SET(CPACK_PACKAGE_VERSION_PATCH 7)
 
 # set some global variables, in particular version variables
-set (VERSION 2.0.7)
-set (SOVERSION ${VERSION})
-STRING(REGEX REPLACE "[.].*$" "" SOVERSION ${SOVERSION})
-set (REQUIRES 5.0.0)
-set (PACKAGE ccrtp)
 
 # Set library postfix in case of 64 bit architecture
 # this caused problems in debian where it has to always be lib....
