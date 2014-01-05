@@ -6,7 +6,7 @@
 # Contributor: Alexander Rødseth <rodseth@gmail.com>
 
 pkgname=ccrtp
-pkgver=2.0.6
+pkgver=2.0.7
 pkgrel=0
 pkgdesc="An implementation of RTP, the real-time transport protocol from the IETF"
 arch=('i686' 'x86_64')
