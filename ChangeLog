@@ -2,6 +2,10 @@
 
 	Clang fixes & code cleanup from static analysis
 
+2014-01-05  David Sugar
+
+	Cleanup of configure
+
 2013-06-30  David Sugar
 
 	Fixed texinfo errors
