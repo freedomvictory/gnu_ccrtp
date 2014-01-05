@@ -1088,7 +1088,7 @@ void QueueRTCPManager::setPRIVPrefix(Participant* part, const char* const value,
     memcpy(buf,value,len);
     buf[len] = '\0';
     ParticipantHandler::setPRIVPrefix(part,buf);
-    delete buf;
+    delete [] buf;
 }
 
 SDESItemType QueueRTCPManager::scheduleSDESItem()
