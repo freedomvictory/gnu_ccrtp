@@ -9,7 +9,8 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-AC_INIT([ccrtp], [2.0.3])
+VERSION="2.0.7"
+AC_INIT([ccrtp], [$VERSION])
 AC_CONFIG_SRCDIR([src/ccrtp/rtp.h])
 
 cfg_options=""
@@ -33,7 +34,6 @@ if test ! -z "$cfg_options" ; then
         exit -1
 fi
 
-VERSION="2.0.6"
 REQUIRES="5.0.0"
 LT_VERSION="2:3:0"
 AC_CONFIG_AUX_DIR(autoconf)
