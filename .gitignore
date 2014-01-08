@@ -1,5 +1,4 @@
-build/
-autoconf/
+/autoconf/
 CMakeFiles/
 demo-*
 configure
@@ -7,8 +6,9 @@ Makefile
 Makefile.in
 aclocal.m4
 cmake_*
-CMakeCache.txt
+/CMakeCache.txt
 config.h
+ccrtp-config.h
 *.o
 *.lo
 *.la
@@ -19,5 +19,6 @@ config.h
 *.libs
 *.pc
 *.spec
+*.cbp
 *~
 
