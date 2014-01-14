@@ -230,6 +230,14 @@ int main(int argc, char *argv[])
     SendPacketTransmissionTest *tx;
 
     // accept as parameter if must run as --send or --recv
+    for (int i = 1; i < argc; ++i) {
+        send |= !strcmp(argv[i], "-s") or !strcmp(argv[i], "--send");
+        if ( send )
+            break;
+        recv |= !strcmp(argv[i], "-r") or !strcmp(argv[i], "--recv");
+        if ( recv )
+            break;
+    }
 
     // run several tests in parallel threads
     if ( send ) {
