@@ -253,6 +253,8 @@ IncomingDataQueue::takeInDataPacket(void)
         // Network address is assumed to be the same as the control one
         setNetworkAddress(*s,network_address);
         sourceLink->initStats();
+        // Keep first sequence number for stats
+        sourceLink->setBaseSeqNum(packet->getSeqNum());
         // First packet arrival time.
         sourceLink->setInitialDataTime(recvtime);
         sourceLink->setProbation(getMinValidPacketSequence());
