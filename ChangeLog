@@ -1,3 +1,7 @@
+2014-04-14  David Sugar (for 2.0.9)
+
+	Merged fix from Alexandre Lision for initial rtcp seq #
+
 2014-03-24  David Sugar (for 2.0.8)
 
 	Fixed for gcrypt >= 1.6.0...
