@@ -1,4 +1,4 @@
 
 ########### install files ###############
 
-install(FILES ccrtp.info DESTINATION share/info)
+install(FILES ccrtp.info DESTINATION ${CMAKE_INSTALL_DATADIR}/info)

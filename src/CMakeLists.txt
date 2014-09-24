@@ -66,4 +66,4 @@ add_dependencies(ccrtp commoncpp)
 
 ########### install files ###############
 
-install(TARGETS ccrtp DESTINATION lib${LIB64})
+install(TARGETS ccrtp DESTINATION ${CMAKE_INSTALL_LIBDIR})

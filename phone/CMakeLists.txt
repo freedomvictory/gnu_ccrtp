@@ -13,12 +13,12 @@ add_executable(phone ${phone_SRCS})
 
 target_link_libraries(phone ccrtp1)
 
-#install(TARGETS phone DESTINATION bin )
+#install(TARGETS phone DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 
 ########### install files ###############
 
-# install(FILES  phone.h DESTINATION include/ccrtp)
+# install(FILES  phone.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR/ccrtp)
 
 src_distribution_init()
 add_src_dist_files(${phone_SRCS})

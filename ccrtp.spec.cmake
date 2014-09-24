@@ -54,13 +54,7 @@ documentation for building applications that use GNU ccrtp
 %build
 %{__mkdir} build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} \
-      -DSYSCONFDIR=%{_sysconfdir} \
-      -DMANDIR=%{_mandir} \
-      -DCMAKE_VERBOSE_MAKEFILE=TRUE \
-      -DCMAKE_C_FLAGS_RELEASE:STRING="$RPM_OPT_FLAGS" \
-      -DCMAKE_CXX_FLAGS_RELEASE:STRING="$RPM_OPT_FLAGS" \
-      ..
+%cmake ..
 %{__make} %{?_smp_mflags}
 
 %install

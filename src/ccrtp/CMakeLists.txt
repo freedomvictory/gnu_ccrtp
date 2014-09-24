@@ -17,4 +17,4 @@ set(ccrtp1_headers base.h
 
 ########### install files ###############
 
-install(FILES ${ccrtp1_headers} DESTINATION include/ccrtp)
+install(FILES ${ccrtp1_headers} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/ccrtp)

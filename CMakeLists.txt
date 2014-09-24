@@ -55,6 +55,8 @@ include(cmake/Modules/FindGcryptConfig.cmake)
 include(FindPkgConfig)
 include(CheckLibraryExists)
 include(CheckIncludeFiles)
+include(GNUInstallDirs)
+
 
 if(${PROJECT_NAME} STREQUAL ${CMAKE_PROJECT_NAME})
     include(cmake/Modules/GeneratePackage.cmake)
@@ -113,15 +115,7 @@ if (enable_srtp)
   endif()
 endif()
 
-# the following set(...) commands are only to have backward
-# compatibility with autoconf stuff to generate the pc file
-set(prefix ${CMAKE_INSTALL_PREFIX})
-set(exec_prefix ${prefix}/bin)
-set(libdir ${prefix}/lib${LIB64})
-set(includedir ${prefix}/include)
-set(PACKAGE pkgconfig)
-
-configure_file(libccrtp.pc.in ${CMAKE_CURRENT_BINARY_DIR}/libccrtp.pc @ONLY)
+configure_file(libccrtp.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/libccrtp.pc)
 configure_file(ccrtp.spec.cmake ${CMAKE_CURRENT_BINARY_DIR}/ccrtp.spec @ONLY)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
@@ -143,7 +137,7 @@ add_subdirectory(demo)
 add_subdirectory(doc)
 
 ########### install files ###############
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libccrtp.pc DESTINATION lib${LIB64}/pkgconfig)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libccrtp.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
 
 if(${PROJECT_NAME} STREQUAL ${CMAKE_PROJECT_NAME})
 
