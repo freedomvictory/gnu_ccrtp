@@ -14,8 +14,11 @@ EXTRA_DIST = autogen.sh ccrtp.spec ccrtp.spec.in COPYING.addendum \
     ccrtp.list ccrtp.list.in libccrtp.pc libccrtp.pc.in autoconf/* \
     ccrtp-config.h directive.in libccrtp.pc.cmake
 
-SUBDIRS = src demo doc
+SUBDIRS = src doc
 DIST_SUBDIRS = m4 src phone doc demo w32
+if BUILD_DEMOS
+SUBDIRS += demo
+endif
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libccrtp.pc
