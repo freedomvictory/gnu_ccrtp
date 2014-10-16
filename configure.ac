@@ -38,6 +38,13 @@ if test -z "$enable_srtp"; then
    AC_DEFINE(SRTP_SUPPORT, [], [SRTP support])
 fi
 
+# demos (default-enabled)
+AC_ARG_ENABLE([demos],
+              AS_HELP_STRING([--disable-demos], [Disable compilation of demos]))
+
+AS_IF([test "x$enable_demos" != "xno"],
+      [AM_CONDITIONAL(BUILD_DEMOS, true)], [AM_CONDITIONAL(BUILD_DEMOS, false)])
+
 # availability of gcrypt or openSSL crypto library if SRTP support is enabled
 if test "${enable_srtp}" = "yes"
 then
