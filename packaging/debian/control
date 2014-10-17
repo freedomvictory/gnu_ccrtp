@@ -2,7 +2,7 @@ Source: ccrtp
 Section: devel
 Priority: optional
 Maintainer: David Sugar <dyfet@gnutelephony.org>
-Build-Depends: debhelper (>= 7.0.50), libucommon-dev (>= 5.0.0), doxygen, libgcrypt11-dev | libgcrypt-dev, pkg-config, autotools-dev, dpkg-dev (>= 1.13.19)
+Build-Depends: debhelper (>= 7.0.50), libucommon-dev (>= 1:6.0.0), doxygen, libgcrypt11-dev | libgcrypt-dev, pkg-config, autotools-dev, dpkg-dev (>= 1.13.19)
 Standards-Version: 3.8.3
 Homepage: http://www.gnu.org/software/ccrtp/
 Vcs-Svn: svn://svn.debian.org/pkg-voip/libccrtp/trunk/
@@ -11,7 +11,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/pkg-voip/libccrtp/?op=log
 Package: libccrtp-dev
 Section: libdevel
 Architecture: any
-Depends: libccrtp2 (= ${binary:Version}), libc6-dev, libucommon-dev (>= 5.0.0), pkg-config, ${misc:Depends}
+Depends: libccrtp3 (= ${binary:Version}), libc6-dev, libucommon-dev (>= 5.0.0), pkg-config, ${misc:Depends}
 Description: Common C++ class framework for RTP packets
  GNU ccRTP is a GNU Common C++ based high performance RTP stack. RTP is
  the Internet-standard protocol for the transport of real-time data,
@@ -39,7 +39,7 @@ Description: Common C++ class framework for RTP packets
  streaming with different underlying transport protocols, not just
  with IPV4 UDP sockets.
 
-Package: libccrtp2
+Package: libccrtp3
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
@@ -70,13 +70,13 @@ Description: Common C++ class framework for RTP packets
  streaming with different underlying transport protocols, not just
  with IPV4 UDP sockets.
 
-Package: libccrtp2-dbg
+Package: libccrtp3-dbg
 Architecture: any
 Section: debug
 Priority: extra
 Recommends: libucommon-dev
-Depends: libccrtp2 (= ${binary:Version}),
+Depends: libccrtp3 (= ${binary:Version}),
          ${misc:Depends}
-Description: debugging symbols for libccrtp2
- This package contains the debugging symbols for libccrtp2.
+Description: debugging symbols for libccrtp3
+ This package contains the debugging symbols for libccrtp3.
 

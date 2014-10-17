@@ -14,18 +14,18 @@
 cmake_minimum_required(VERSION 2.6)
 
 PROJECT(libccrtp)
-set (VERSION 2.0.9)
+set (VERSION 2.1.0)
 set (SOVERSION ${VERSION})
 STRING(REGEX REPLACE "[.].*$" "" SOVERSION ${SOVERSION})
-set (REQUIRES 5.0.0)
+set (REQUIRES 6.2.0)
 set (PACKAGE ccrtp)
 
 # for debug and trace during CMakeList development
 set(CMAKE_VERBOSE_MAKEFILE FALSE)
 
 SET(CPACK_PACKAGE_VERSION_MAJOR 2)
-SET(CPACK_PACKAGE_VERSION_MINOR 0)
-SET(CPACK_PACKAGE_VERSION_PATCH 7)
+SET(CPACK_PACKAGE_VERSION_MINOR 1)
+SET(CPACK_PACKAGE_VERSION_PATCH 0)
 
 # set some global variables, in particular version variables
 

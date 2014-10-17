@@ -1,3 +1,10 @@
+Changes from 2.0.9 to 2.1.0
+- configure: add option to disable compilation of demos
+- OSX: Check for macports glibtoolize.
+- modernized cmake
+- use standard header for malloc
+- uptick of abi version for ucommon
+
 2014-04-14  David Sugar (for 2.0.9)
 
 	Merged fix from Alexandre Lision for initial rtcp seq #
