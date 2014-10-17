@@ -22,7 +22,7 @@ Group: Development/Libraries/C and C++
 URL: http://www.gnu.org/software/commoncpp/commoncpp.html
 Source0: http://www.gnutelephony.org/dist/tarballs/ccrtp-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires: ucommon-devel >= 6.0.0
+BuildRequires: ucommon-devel >= 6.2.0
 BuildRequires: pkgconfig libstdc++-devel libgcrypt-devel gcc-c++ cmake
 
 %define srcdirname %{name}-%{version}
