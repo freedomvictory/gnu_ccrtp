@@ -1,3 +1,10 @@
+ccrtp (1:2.1.0-0) UNRELEASED; urgency=low
+
+  * Updated abi
+  * Local epoch
+
+ -- David Sugar <dyfet@gnutelephony.org>  Sat, 18 Oct 2014 08:57:26 -0400
+
 ccrtp (2.0.9-0gt1) UNRELEASED; urgency=low
 
   * Updated for initial rtcp sequence number support.
