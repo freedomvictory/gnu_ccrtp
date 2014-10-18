@@ -9,9 +9,8 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 AUTOMAKE_OPTIONS = no-dependencies
-EXTRA_DIST = srcmodel.txt srcmodel.dia Doxyfile Doxymini
+EXTRA_DIST = CMakeLists.txt srcmodel.txt srcmodel.dia Doxyfile Doxymini
 AM_MAKEINFOFLAGS = --no-warn
-EXTRA_DIST = CMakeLists.txt
 
 info_TEXINFOS = ccrtp.texi
 ccrtp_TEXINFOS = gpl.texi fdl.texi fdlnotice.texi
@@ -19,7 +18,7 @@ ccrtp_TEXINFOS = gpl.texi fdl.texi fdlnotice.texi
 if DOXY
 noinst_DATA = doxy
 
-doxy:
+doxy:	Doxyfile
 	(cd @srcdir@ ; $(DOXYGEN) Doxymini)
 	touch doxy
 
