@@ -10,6 +10,7 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 AUTOMAKE_OPTIONS = no-dependencies dist-shar
+EXTRA_DIST = CMakeLists.txt
 
 # additional include path necessary to compile the srtp crypto sources
 AM_CXXFLAGS= @WARN_FLAGS@ -I$(top_srcdir)/src/ccrtp

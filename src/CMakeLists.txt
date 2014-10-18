@@ -60,7 +60,7 @@ else()
 endif()
 
 add_library(ccrtp ${BUILD_LIBRARY_TYPE} ${ccrtp_srcs} ${crypto_srcs} ${skein_srcs} ${twofish_srcs})
-set_target_properties(ccrtp PROPERTIES VERSION ${VERSION} SOVERSION ${SOVERSION})
+set_target_properties(ccrtp PROPERTIES VERSION ${LIB_VERSION} SOVERSION ${SOVERSION})
 target_link_libraries(ccrtp commoncpp ${LIBS})
 add_dependencies(ccrtp commoncpp)
 

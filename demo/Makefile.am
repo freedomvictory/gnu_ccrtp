@@ -10,6 +10,8 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 AUTOMAKE_OPTIONS = no-dependencies dist-shar
+EXTRA_DIST = CMakeLists.txt
+
 LT_VERSION=@LT_CCXX_VERSION@
 #ignored for programs
 #$(LT_VERSION) -release $(LT_RELEASE)

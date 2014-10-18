@@ -11,6 +11,7 @@
 AUTOMAKE_OPTIONS = no-dependencies
 EXTRA_DIST = srcmodel.txt srcmodel.dia Doxyfile Doxymini
 AM_MAKEINFOFLAGS = --no-warn
+EXTRA_DIST = CMakeLists.txt
 
 info_TEXINFOS = ccrtp.texi
 ccrtp_TEXINFOS = gpl.texi fdl.texi fdlnotice.texi

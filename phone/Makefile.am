@@ -14,7 +14,7 @@ LT_VERSION=@LT_CCXX_VERSION@
 #$(LT_VERSION) -release $(LT_RELEASE)
 AM_CXXFLAGS = @WARN_FLAGS@ -I$(top_srcdir)/src
 ccxxincludedir=$(includedir)/ccrtp
-EXTRA_DIST = phone.conf
+EXTRA_DIST = phone.conf CMakeLists.txt
 
 noinst_HEADERS = server.h
 ccxxinclude_HEADERS = phone.h

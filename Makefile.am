@@ -12,7 +12,8 @@
 ACLOCAL_AMFLAGS = -I m4
 EXTRA_DIST = autogen.sh ccrtp.spec ccrtp.spec.in COPYING.addendum \
     ccrtp.list ccrtp.list.in libccrtp.pc libccrtp.pc.in autoconf/* \
-    ccrtp-config.h directive.in libccrtp.pc.cmake
+    ccrtp-config.h directive.in libccrtp.pc.cmake CMakeLists.txt \
+    cmake/Modules/*.cmake *.cmake cmake-abi.sh
 
 SUBDIRS = src doc
 DIST_SUBDIRS = m4 src phone doc demo w32

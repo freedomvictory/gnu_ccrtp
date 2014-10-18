@@ -10,6 +10,8 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 AUTOMAKE_OPTIONS = no-dependencies dist-shar
+EXTRA_DIST = CMakeLists.txt
+
 ccxxincludedir=$(includedir)/ccrtp
 
 ccxxinclude_HEADERS = base.h formats.h rtppkt.h rtcppkt.h sources.h channel.h \
