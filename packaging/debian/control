@@ -2,7 +2,7 @@ Source: ccrtp
 Section: devel
 Priority: optional
 Maintainer: David Sugar <dyfet@gnutelephony.org>
-Build-Depends: debhelper (>= 7.0.50), libucommon-dev (>= 1:6.2.0), doxygen, libgcrypt11-dev | libgcrypt-dev, pkg-config, autotools-dev, dpkg-dev (>= 1.13.19)
+Build-Depends: debhelper (>= 9), libucommon-dev (>= 1:6.2.0), doxygen, libgcrypt11-dev | libgcrypt-dev, pkg-config, autotools-dev, dpkg-dev (>= 1.16.0)
 Standards-Version: 3.8.3
 Homepage: http://www.gnu.org/software/ccrtp/
 Vcs-Svn: svn://svn.debian.org/pkg-voip/libccrtp/trunk/
@@ -42,7 +42,8 @@ Description: Common C++ class framework for RTP packets
 Package: libccrtp3
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${misc:Pre-Depends}
 Description: Common C++ class framework for RTP packets
  GNU ccRTP is a GNU Common C++ based high performance RTP stack. RTP is
  the Internet-standard protocol for the transport of real-time data,

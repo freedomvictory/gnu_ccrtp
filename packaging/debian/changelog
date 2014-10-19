@@ -1,4 +1,11 @@
-ccrtp (1:2.1.0-0) UNRELEASED; urgency=low
+ccrtp (1:2.1.0-2) UNRELEASED; urgency=low
+
+  * Updated for multiarch
+  * Fixed release numbering
+
+ -- David Sugar <dyfet@gnutelephony.org>  Sun, 19 Oct 2014 09:47:45 -0400
+
+ccrtp (1:2.1.0-1) UNRELEASED; urgency=low
 
   * Updated abi
   * Local epoch
