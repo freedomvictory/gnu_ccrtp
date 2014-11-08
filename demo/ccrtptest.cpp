@@ -204,7 +204,7 @@ class MiscTest : public Test, public Thread, public TimerPort
             cout << p.getSDESItem(SDESItemTypeCNAME) << endl;
             //cout << p.getPRIVPrefix();
         }
-        delete tx;
+        delete[] tx;
         return 0;
     }
 };
