@@ -401,7 +401,7 @@ private:
      **/
     struct RTPFixedHeader
     {
-#if __BYTE_ORDER == __BIG_ENDIAN
+#if defined(__BYTE_ORDER) && __BYTE_ORDER == __BIG_ENDIAN
         /// For big endian boxes
         unsigned char version:2;       ///< Version, currently 2
         unsigned char padding:1;       ///< Padding bit
@@ -434,7 +434,7 @@ private:
 public:
     struct RFC2833Payload
     {
-#if __BYTE_ORDER == __BIG_ENDIAN
+#if defined(__BYTE_ORDER) && __BYTE_ORDER == __BIG_ENDIAN
             uint8 event : 8;
             bool ebit : 1;
             bool rbit : 1;
