@@ -9,11 +9,11 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-AC_INIT([ccrtp], [2.1.0])
+AC_INIT([ccrtp], [2.1.1])
 AC_CONFIG_SRCDIR([src/ccrtp/rtp.h])
 
-LT_VERSION="3:0:0"
-REQUIRES="6.2.0"
+LT_VERSION="3:1:0"
+REQUIRES="6.2.2"
 
 AC_CONFIG_AUX_DIR(autoconf)
 AC_CANONICAL_SYSTEM

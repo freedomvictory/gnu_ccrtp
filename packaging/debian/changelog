@@ -1,3 +1,9 @@
+ccrtp (1:2.1.1-1) UNRELEASED; urgency=medium
+
+  * Endian fixes for some platforms
+
+ -- David Sugar <dyfet@gnutelephony.org>  Thu, 13 Nov 2014 04:35:26 -0400
+
 ccrtp (1:2.1.0-2) UNRELEASED; urgency=low
 
   * Updated for multiarch

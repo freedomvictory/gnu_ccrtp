@@ -14,8 +14,8 @@
 cmake_minimum_required(VERSION 2.6)
 
 PROJECT(libccrtp)
-set (VERSION 2.1.0)
-set (REQUIRES 6.2.0)
+set (VERSION 2.1.1)
+set (REQUIRES 6.2.2)
 set (PACKAGE ccrtp)
 
 if(UNIX)
