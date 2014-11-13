@@ -46,7 +46,7 @@
 
 NAMESPACE_COMMONCPP
 
-#if __BYTE_ORDER == __BIG_ENDIAN
+#if defined(__BYTE_ORDER) && __BYTE_ORDER == __BIG_ENDIAN
 const uint16 RTCPCompoundHandler::RTCP_VALID_MASK = (0xc000 | 0x2000  | 0xfe);
 const uint16 RTCPCompoundHandler::RTCP_VALID_VALUE = ((CCRTP_VERSION << 14) | RTCPPacket::tSR);
 #else
