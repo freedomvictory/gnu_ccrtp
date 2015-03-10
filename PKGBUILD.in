@@ -6,18 +6,18 @@
 # Contributor: Alexander Rødseth <rodseth@gmail.com>
 
 pkgname=ccrtp
-pkgver=2.0.7
+pkgver=@VERSION@
 pkgrel=0
+epoch=9
 pkgdesc="An implementation of RTP, the real-time transport protocol from the IETF"
 arch=('i686' 'x86_64')
 url="http://www.gnu.org/software/ccrtp/"
 license=('GPL' 'custom')
-depends=('ucommon' 'libgcrypt')
+depends=('ucommon>=@USES_UCOMMON_REQUIRED@' 'libgcrypt')
 options=('!libtool')
 install=$pkgname.install
-source=("ftp://ftp.gnu.org/pub/gnu/$pkgname/$pkgname-$pkgver.tar.gz"{,.sig})
-md5sums=('a71a7b105e97b44e218d931d58d9acaf'
-         'SKIP')
+source=("$pkgname-$pkgver.tar.gz")
+md5sums=('SKIP')
 
 build() {
   cd ${pkgname}-${pkgver}

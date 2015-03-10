@@ -36,6 +36,8 @@ demo/rtpsend
 *.kdev4
 *.deps
 *.libs
+*.zip
+*.rpm
 *.pc
 *.spec
 *.cbp

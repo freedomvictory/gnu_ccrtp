@@ -13,7 +13,7 @@ AC_INIT([ccrtp], [2.1.1])
 AC_CONFIG_SRCDIR([src/ccrtp/rtp.h])
 
 LT_VERSION="3:1:0"
-REQUIRES="6.2.2"
+USES_UCOMMON_REQUIRED="6.2.2"
 
 AC_CONFIG_AUX_DIR(autoconf)
 AC_CANONICAL_SYSTEM
@@ -78,7 +78,7 @@ OST_PROG_LIBVER
 OST_PROG_LIBRARY(CCXX,[$LT_VERSION])
 OST_AUTOMAKE_MODE
 OST_MAINTAINER_MODE
-PKG_CHECK_MODULES(COMMONCPP, commoncpp >= $REQUIRES)
+PKG_CHECK_MODULES(COMMONCPP, commoncpp >= $USES_UCOMMON_REQUIRED)
 CXXFLAGS="$CXXFLAGS $COMMONCPP_CFLAGS"
 GNULIBS="$COMMONCPP_LIBS $LIBS"
 AC_SUBST(GNULIBS)
@@ -110,6 +110,6 @@ AC_PATH_PROG(DOXYGEN, doxygen, no)
 AC_SUBST(DOXYGEN)
 AM_CONDITIONAL(DOXY, test "$DOXYGEN" != "no")
 
-AC_OUTPUT(Makefile m4/Makefile src/Makefile src/ccrtp/Makefile
+AC_OUTPUT(Makefile m4/Makefile src/Makefile src/ccrtp/Makefile PKGBUILD
 doc/Makefile demo/Makefile phone/Makefile w32/Makefile ccrtp.spec
 libccrtp.spec ccrtp.list libccrtp.pc src/ccrtp/crypto/Makefile directive)

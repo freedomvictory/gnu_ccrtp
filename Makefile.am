@@ -12,7 +12,7 @@
 ACLOCAL_AMFLAGS = -I m4
 EXTRA_DIST = autogen.sh ccrtp.spec ccrtp.spec.in COPYING.addendum \
     ccrtp.list ccrtp.list.in libccrtp.pc libccrtp.pc.in autoconf/* \
-    ccrtp-config.h directive.in libccrtp.pc.cmake CMakeLists.txt \
+    ccrtp-config.h directive.in PKGBUILD.in CMakeLists.txt \
     cmake/Modules/*.cmake *.cmake cmake-abi.sh
 
 SUBDIRS = src doc
@@ -23,6 +23,14 @@ endif
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libccrtp.pc
+
+srpm:	dist
+	rm -f *.rpm
+	rpmbuild  -bs --nodeps --define "_sourcedir ." --define "_srcrpmdir ." --sign ucommon.spec
+
+deb:	dist
+	rm -f *.deb *.debian.tar.gz *.dsc *.changes
+	cape-source --sign ccrtp-${VERSION}.tar.gz .
 
 dist-hook:  cleandist
 

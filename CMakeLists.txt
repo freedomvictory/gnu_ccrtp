@@ -13,47 +13,14 @@
 
 cmake_minimum_required(VERSION 2.6)
 
-PROJECT(libccrtp)
+PROJECT(ccrtp)
 set (VERSION 2.1.1)
-set (REQUIRES 6.2.2)
-set (PACKAGE ccrtp)
-
-if(UNIX)
-    execute_process(WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND "./cmake-abi.sh" OUTPUT_VARIABLE LIB_VERSION)
-else()
-    set(LIB_VERSION ${VERSION})
-endif()
-
-set(SOVERSION ${LIB_VERSION})
-STRING(REGEX REPLACE "[.].*$" "" SOVERSION ${SOVERSION})
-if(ABI_MAJORONLY)
-    set(LIB_VERSION ${SOVERSION})
-endif()
-
-SET(CPACK_PACKAGE_VERSION_MAJOR 2)
-SET(CPACK_PACKAGE_VERSION_MINOR 1)
-SET(CPACK_PACKAGE_VERSION_PATCH 0)
-
-# set some global variables, in particular version variables
-
-# Set library postfix in case of 64 bit architecture
-# this caused problems in debian where it has to always be lib....
-set(LIB64 "")
-if (NOT EXISTS /etc/debian_version)
-    if ( "${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "x86_64" )
-        set(LIB64 "64")
-    endif()
-endif()
+set (USES_UCOMMON_REQUIRED 6.3.1)
 
 include(cmake/Modules/AutoArgs.cmake)
 enable_arg(srtp true)
 
-if(MSVC60)
-    set(BUILD_STATIC ON CACHE BOOL "static linking only" FORCE)
-    MARK_AS_ADVANCED(BUILD_STATIC)
-else()
-    option(BUILD_STATIC "Set to OFF to build shared libraries" OFF)
-endif()
+option(BUILD_STATIC "Set to OFF to build shared libraries" OFF)
 
 MESSAGE( STATUS "Configuring GNU ${PROJECT_NAME} ${VERSION}...")
 
@@ -63,7 +30,6 @@ include(FindPkgConfig)
 include(CheckLibraryExists)
 include(CheckIncludeFiles)
 include(GNUInstallDirs)
-
 
 if(${PROJECT_NAME} STREQUAL ${CMAKE_PROJECT_NAME})
     include(cmake/Modules/GeneratePackage.cmake)
@@ -82,13 +48,30 @@ if (USES_UCOMMON_INCLUDE_DIRS)
     message(STATUS "  Using local commoncpp dependency")
 else()
     find_package(PkgConfig)
-    pkg_check_modules(USES_UCOMMON commoncpp>=${REQUIRES})
+    pkg_check_modules(USES_UCOMMON commoncpp>=${USES_UCOMMON_REQUIRED})
 endif()
 
-include_directories(${USES_UCOMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src/ccrtp)
+include_directories(${USES_UCOMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src/ccrtp ${CMAKE_CURRENT_BINARY_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/src/ccrtp ${WITH_INCLUDES})
 link_directories(${USES_UCOMMON_LIBRARY_DIRS})
-add_definitions(${USES_UCOMMON_CFLAGS})
+add_definitions(${USES_UCOMMON_CFLAGS} ${WITH_CFLAGS})
 set (LIBS ${LIBS} ${USES_UCOMMON_LDFLAGS} commoncpp ${USES_UCOMMON_LIBRARIES})
+
+if(USES_UCOMMON_CMAKE_MACROS)
+	set(CMAKE_MODULE_PATH "${USES_UCOMMON_CMAKE_MACROS}")
+elseif(EXISTS "${USES_UCOMMON_PREFIX}/share/ucommon/cmake")
+	set(CMAKE_MODULE_PATH "${USES_UCOMMON_PREFIX}/share/ucommon/cmake")
+else()
+	set(CMAKE_MODULE_PATH "${CMAKE_INSTALL_FULL_DATADIR}/ucommon/cmake")
+endif()
+
+include(CapeConfig)
+include(CapeMakeTargets)
+
+if(CMAKE_COMPILER_IS_GNUCXX)
+  add_definitions(-g -O2 -fno-strict-aliasing)
+  add_definitions(-Wno-long-long -Wno-char-subscripts)
+  add_definitions(-Wall -ansi -pedantic)
+endif()
 
 if(WIN32 AND NOT CYGWIN AND NOT MSYS AND NOT MINGW)
   check_include_files(openssl/ssl.h HAVE_OPENSSL_WINDOWS)
@@ -122,20 +105,13 @@ if (enable_srtp)
   endif()
 endif()
 
-configure_file(libccrtp.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/libccrtp.pc)
-configure_file(ccrtp.spec.cmake ${CMAKE_CURRENT_BINARY_DIR}/ccrtp.spec @ONLY)
-
-if(CMAKE_COMPILER_IS_GNUCXX)
-  add_definitions(-g -O2 -fno-strict-aliasing)
-  add_definitions(-Wno-long-long -Wno-char-subscripts)
-  add_definitions(-Wall -ansi -pedantic)
-endif()
-
 # now prepare and go for the sub-directories
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/src/ccrtp)
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ccrtp-config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/ccrtp-config.h)
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
+create_headers()
+create_specfile()
+create_pcfiles(pc_files libccrtp)
+create_scripts(noinst_scr PKGBUILD)
 
 add_subdirectory(src)
 
@@ -144,7 +120,7 @@ add_subdirectory(demo)
 add_subdirectory(doc)
 
 ########### install files ###############
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libccrtp.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+install(FILES ${pc_files} DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
 
 #if(${PROJECT_NAME} STREQUAL ${CMAKE_PROJECT_NAME})
 #
