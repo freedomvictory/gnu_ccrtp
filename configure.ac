@@ -105,11 +105,12 @@ AC_ARG_WITH(nana,[  --with-nana             use GNU nana for asserts and logging
 KDOC_DIR="\$(top_srcdir)/doc"
 AC_SUBST(KDOC_DIR)
 AC_SUBST(LT_VERSION)
+AC_SUBST(USES_UCOMMON_REQUIRED)
 
 AC_PATH_PROG(DOXYGEN, doxygen, no)
 AC_SUBST(DOXYGEN)
 AM_CONDITIONAL(DOXY, test "$DOXYGEN" != "no")
 
 AC_OUTPUT(Makefile m4/Makefile src/Makefile src/ccrtp/Makefile PKGBUILD
-doc/Makefile demo/Makefile phone/Makefile w32/Makefile ccrtp.spec
-libccrtp.spec ccrtp.list libccrtp.pc src/ccrtp/crypto/Makefile directive)
+doc/Makefile demo/Makefile phone/Makefile w32/Makefile ccrtp.spec 
+ccrtp.list libccrtp.pc src/ccrtp/crypto/Makefile directive)

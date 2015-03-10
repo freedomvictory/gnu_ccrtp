@@ -3,6 +3,7 @@ demo-*
 configure
 Makefile
 Makefile.in
+PKGBUILD
 aclocal.m4
 cmake_*
 /CMakeCache.txt
@@ -38,6 +39,9 @@ demo/rtpsend
 *.libs
 *.zip
 *.rpm
+*.changes
+*.dsc
+*.tar.gz
 *.pc
 *.spec
 *.cbp
