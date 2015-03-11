@@ -17,9 +17,6 @@ PROJECT(ccrtp)
 set (VERSION 2.1.1)
 set (USES_UCOMMON_REQUIRED 6.3.1)
 
-include(cmake/Modules/AutoArgs.cmake)
-enable_arg(srtp true)
-
 option(BUILD_STATIC "Set to OFF to build shared libraries" OFF)
 
 MESSAGE( STATUS "Configuring GNU ${PROJECT_NAME} ${VERSION}...")
@@ -66,6 +63,8 @@ endif()
 
 include(CapeConfig)
 include(CapeMakeTargets)
+
+enable_arg(srtp true)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
   add_definitions(-g -O2 -fno-strict-aliasing)
