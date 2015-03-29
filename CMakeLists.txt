@@ -29,11 +29,12 @@ include(CheckLibraryExists)
 include(CheckIncludeFiles)
 include(GNUInstallDirs)
 
-if(${PROJECT_NAME} STREQUAL ${CMAKE_PROJECT_NAME})
-    include(cmake/Modules/GeneratePackage.cmake)
-
-    GENERATE_PACKAGING(${PACKAGE} ${VERSION})
-endif()
+# obsoleted, we may use cape macros for this...
+#if(${PROJECT_NAME} STREQUAL ${CMAKE_PROJECT_NAME})
+#    include(cmake/Modules/GeneratePackage.cmake)
+#
+#    GENERATE_PACKAGING(${PACKAGE} ${VERSION})
+#endif()
 
 # setup the Thread include and lib
 find_package(Threads)
