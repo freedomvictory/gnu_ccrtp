@@ -15,7 +15,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 PROJECT(ccrtp)
-set (VERSION 2.1.1)
+set (VERSION 2.1.2)
 set (USES_UCOMMON_REQUIRED 6.3.1)
 
 option(BUILD_STATIC "Set to OFF to build shared libraries" OFF)
