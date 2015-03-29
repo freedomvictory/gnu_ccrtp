@@ -1,3 +1,8 @@
+Changes from 2.1.1 to 2.1.2
+- use ucommon cmake macros
+- copyright assignment to Cherokees of Idaho
+- copyright updates and corrections to bring current
+
 Changes from 2.1.0 to 2.1.1
 - fix endianness checks
 - cleanup alloc/dealloc

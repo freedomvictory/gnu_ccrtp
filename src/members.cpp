@@ -1,4 +1,4 @@
-// Copyright (C) 2001,2002 Federico Montesino <p5087@quintero.fie.us.es>
+// Copyright (C) 2001-2015 Federico Montesino <p5087@quintero.fie.us.es>
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by

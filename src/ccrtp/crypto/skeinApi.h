@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2010 Werner Dittmann
+Copyright (c) 2010-2015 Werner Dittmann
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

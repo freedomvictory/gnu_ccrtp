@@ -1,5 +1,5 @@
 // test ccRTP functionality
-// Copyright (C) 2004 Federico Montesino Pouzols <fedemp@altern.org>
+// Copyright (C) 2004-2015 Federico Montesino Pouzols <fedemp@altern.org>
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by

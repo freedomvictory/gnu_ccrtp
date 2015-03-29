@@ -35,7 +35,7 @@
 #     only gcrypt 1.4.3 or lower is available only.
 #
 
-# Copyright (C) 2010 Werner Dittmann <werner.dittmann@t-online.de>
+# Copyright (C) 2010-2015 Werner Dittmann <werner.dittmann@t-online.de>
 #
 # Redistribution and use, with or without modification, are permitted
 # provided that the following conditions are met:

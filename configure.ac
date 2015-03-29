@@ -1,5 +1,6 @@
 # Copyright (C) 1999-2005 Open Source Telecom Corporation.
-# Copyright (C) 2006-2010 David Sugar, Tycho Softworks.
+# Copyright (C) 2006-2014 David Sugar, Tycho Softworks.
+# Copyright (C) 2015 Cherokees of Idaho.
 #
 # This file is free software; as a special exception the author gives
 # unlimited permission to copy and/or distribute it, with or without
@@ -9,7 +10,7 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-AC_INIT([ccrtp], [2.1.1])
+AC_INIT([ccrtp], [2.1.2])
 AC_CONFIG_SRCDIR([src/ccrtp/rtp.h])
 
 LT_VERSION="3:1:0"

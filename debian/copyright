@@ -8,8 +8,11 @@ Upstream Authors: David Sugar <dyfet@ostel.com>
 
 Copyright:
 
-# Copyright (C) 1999-2004 Open Source Telecom Corporation.
-Portions Copyright (C) 2001,2002  Federico Montesino <fedemp@altern.org>
+# Copyright (C) 1999-2005 Open Source Telecom Corporation.
+Portions Copyright (C) 2001-2015  Federico Montesino <fedemp@altern.org>
+Portions Copyright (C) 2006-2014 David Sugar, Tycho Softworks.
+Portions Copyright (C) 2006-2015 Werner Dittmann.
+Portions Copyright (C) 2015 Cherokees of Idaho.
 
    This package is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

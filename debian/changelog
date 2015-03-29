@@ -1,3 +1,10 @@
+ccrtp (1:2.1.2-1) UNRELEASED; urgency=low
+
+  * Updated for ucommon cmake macros
+  * Updated copyright notices
+
+ -- David Sugar <dyfet@gnutelephony.org>  Sun, 29 Mar 2015 10:51:13 -0400
+
 ccrtp (1:2.1.1-1) UNRELEASED; urgency=medium
 
   * Endian fixes for some platforms

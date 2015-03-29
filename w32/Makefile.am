@@ -1,4 +1,4 @@
-# Copyright (C) 2002 Federico Montesino Pouzols <fedemp@suidzer0.org>
+# Copyright (C) 2002-2015 Federico Montesino Pouzols <fedemp@suidzer0.org>
 #
 # This file is free software; as a special exception the author gives
 # unlimited permission to copy and/or distribute it, with or without
